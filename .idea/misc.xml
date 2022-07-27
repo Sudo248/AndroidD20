@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/bg_auth.xml" value="0.268" />
+        <entry key="app/src/main/res/drawable/bg_blue_conner_25.xml" value="0.268" />
+        <entry key="app/src/main/res/drawable/bg_blue_gradient_left_45.xml" value="0.268" />
+        <entry key="app/src/main/res/drawable/bg_blue_gradient_right_35.xml" value="0.268" />
+        <entry key="app/src/main/res/layout/activity_auth.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/fragment_a.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.35885416666666664" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
