@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Code/local-only/android/fragment-pratice/app/src/main/res/layout/activity_authen.xml" value="0.16576086956521738" />
+        <entry key="..\:/Code/local-only/android/fragment-pratice/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Code/local-only/android/fragment-pratice/app/src/main/res/layout/fragment_login.xml" value="0.4" />
+        <entry key="..\:/Code/local-only/android/fragment-pratice/app/src/main/res/layout/fragment_signup.xml" value="0.16576086956521738" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
