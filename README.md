@@ -14,4 +14,5 @@
 ![image](https://user-images.githubusercontent.com/84552830/181235466-a57b2a58-3af2-4a73-81e9-fd22222aa33d.png)
 
 //Sau khi đăng nhập thành công sẽ gọi `finish()` của `LoginActivity` để khi nhấn back không quay trở lại màn hình Login.
+
 //Bấm `Logout` sẽ gọi `finish()` đóng App.
