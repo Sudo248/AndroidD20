@@ -1,9 +1,7 @@
 package com.sudo.androidd20
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentResultListener
+import androidx.fragment.app.*
 import androidx.lifecycle.LifecycleOwner
 
 class Navigator private constructor(
@@ -37,47 +35,58 @@ class Navigator private constructor(
         return this
     }
 
-    fun navigate(fClass: Class<out Fragment>): Int {
+    fun navigate(fClass: Class<out Fragment>, block: ((FragmentTransaction) -> Unit)? = null): Int {
         return idHolder?.let { holder ->
             fragmentManager
                 .beginTransaction()
                 .replace(holder, fClass.newInstance(), fClass.simpleName)
+                .apply { block?.invoke(this) }
                 .addToBackStack(null)
                 .commit()
         } ?: -1
     }
 
-    fun navigateOff(fClass: Class<out Fragment>): Int {
+    fun navigateOff(fClass: Class<out Fragment>, block: ((FragmentTransaction) -> Unit)? = null): Int {
         return idHolder?.let { holder ->
             fragmentManager
                 .beginTransaction()
                 .replace(holder, fClass.newInstance(), fClass.simpleName)
+                .apply { block?.invoke(this) }
                 .commit()
         } ?: -1
     }
 
-    fun navigateOffAll(fClass: Class<out Fragment>): Int {
+    fun navigateOffAll(fClass: Class<out Fragment>, block: ((FragmentTransaction) -> Unit)? = null): Int {
         return idHolder?.let { holder ->
             fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
             fragmentManager
                 .beginTransaction()
                 .replace(holder, fClass.newInstance(), fClass.simpleName)
+                .apply { block?.invoke(this) }
                 .addToBackStack(null)
                 .commit()
         } ?: -1
     }
 
-    fun add(fClass: Class<out Fragment>): Int {
+    fun add(fClass: Class<out Fragment>, block: ((FragmentTransaction) -> Unit)? = null): Int {
         return idHolder?.let { holder ->
             fragmentManager
                 .beginTransaction()
                 .add(holder, fClass.newInstance(), fClass.simpleName)
+                .apply { block?.invoke(this) }
                 .commit()
         } ?: -1
     }
 
-    fun pop() {
+    fun back() {
         fragmentManager.popBackStack()
+    }
+
+    fun commit(block: FragmentTransaction.() -> Unit): Int {
+        return fragmentManager
+            .beginTransaction()
+            .apply { block() }
+            .commit()
     }
 
 }

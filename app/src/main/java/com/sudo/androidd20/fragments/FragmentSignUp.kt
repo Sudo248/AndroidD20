@@ -28,7 +28,7 @@ class FragmentSignUp : Fragment() {
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
         binding.txtToLogin.setOnClickListener {
 //            (requireActivity() as AuthActivity).pop()
-            Navigator.of(parentFragmentManager).pop()
+            Navigator.of(parentFragmentManager).back()
         }
         return binding.root
     }

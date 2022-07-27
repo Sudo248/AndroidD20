@@ -14,6 +14,7 @@ class AuthActivity : AppCompatActivity() {
         Navigator
             .of(supportFragmentManager)
             .add(FragmentLogin::class.java)
+
     }
 
     fun navigate(fClass: Class<out Fragment>) {
@@ -23,6 +24,6 @@ class AuthActivity : AppCompatActivity() {
     }
 
     fun pop() {
-        Navigator.of(supportFragmentManager).pop()
+        Navigator.of(supportFragmentManager).back()
     }
 }
