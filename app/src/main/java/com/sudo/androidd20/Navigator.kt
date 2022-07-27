@@ -18,7 +18,7 @@ class Navigator private constructor(
 
     private var idHolder: Int? = null
 
-    fun withHolder(idHolder: Int): Navigator {
+    fun withPlaceHolder(idHolder: Int): Navigator {
         this.idHolder = idHolder
         return this
     }

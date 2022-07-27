@@ -13,14 +13,12 @@ class AuthActivity : AppCompatActivity() {
         setContentView(R.layout.activity_auth)
         Navigator
             .of(supportFragmentManager)
-            .withHolder(R.id.flAuth)
             .add(FragmentLogin::class.java)
     }
 
     fun navigate(fClass: Class<out Fragment>) {
         Navigator
             .of(supportFragmentManager)
-            .withHolder(R.id.flAuth)
             .navigate(fClass)
     }
 

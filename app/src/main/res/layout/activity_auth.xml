@@ -7,8 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".activities.AuthActivity">
 
-    <FrameLayout
-        android:id="@+id/flAuth"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fcvAuth"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout="@layout/fragment_login"/>
