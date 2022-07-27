@@ -28,7 +28,6 @@ class SignUpFragment : Fragment() {
                 else{
                     accounts.add(User(email,password))
                     Toast.makeText(context, "${email} has just been created", Toast.LENGTH_SHORT).show()
-
                 }
 
         }
@@ -40,7 +39,10 @@ class SignUpFragment : Fragment() {
             bundle.putSerializable("acc",accounts)
             //transition
             val transaction= requireActivity().supportFragmentManager.beginTransaction()
-
+            transaction.apply{
+                replace(R.id.fragment_menu,FragmentLogin)
+                commit()
+            }
         }
         return binding.root
     }
