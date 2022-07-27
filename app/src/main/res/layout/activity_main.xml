@@ -1,66 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/custom_background2"
-    android:orientation="vertical"
-    android:weightSum="1"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tv_userName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="45dp"
-            android:layout_marginEnd="45dp"
-            android:autofillHints="true"
-            android:textSize="24sp"
-            android:hint="User name"/>
-
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="45dp"
-            android:autofillHints="true"
-            android:textSize="24sp"
-            android:hint="Real name"/>
-
-        <TextView
-            android:id="@+id/tv_age"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="45dp"
-            android:autofillHints="true"
-            android:textSize="24sp"
-            android:hint="Age"/>
-    </LinearLayout>
-
-    <View
+    <TextView
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="0.4" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/tv_btn_logOut"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="45dp"
-        android:background="@drawable/custom_button2"
-        android:text="@string/btn_log_out"/>
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
