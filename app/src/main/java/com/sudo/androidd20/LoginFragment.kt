@@ -22,6 +22,7 @@ class LoginFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var binding: FragmentLoginBinding
+    private var callBackFragment: CallBack? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -37,7 +38,14 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentLoginBinding.inflate(inflater,container,false)
+        binding.tvSignUp.setOnClickListener{
+            callBackFragment?.changeFragment(RegisterFragment())
+        }
         return binding.root
+    }
+
+    fun setCallBackFragment(callBackFragment: CallBack) {
+        this.callBackFragment = callBackFragment
     }
 
     companion object {
