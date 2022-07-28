@@ -1,10 +1,10 @@
 package com.sudo.androidd20
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.sudo.androidd20.databinding.FragmentRegisterBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -36,7 +36,22 @@ class RegisterFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentRegisterBinding.inflate(inflater,container,false)
+        binding.register.setOnClickListener {
+            signup(binding.username.toString(),binding.password.toString(),binding.confirmedPassword.toString())
+        }
         return binding.root
+    }
+
+    private fun signup(username: String?, password: String?, confirmedPassword: String?) {
+        if (username == null || password == null || confirmedPassword == null) {
+            // TODO
+        }
+        else if(password != confirmedPassword){
+            // TODO
+        }
+        else{
+            //TODO
+        }
     }
 
     companion object {
