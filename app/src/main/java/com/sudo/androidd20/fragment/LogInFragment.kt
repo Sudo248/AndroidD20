@@ -1,5 +1,6 @@
 package com.sudo.androidd20.fragment
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -12,6 +13,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.sudo.androidd20.LoginActivity
 import com.sudo.androidd20.MainActivity
 import com.sudo.androidd20.R
@@ -23,6 +25,17 @@ class LogInFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     private val loginModel: LoginModel by activityViewModels()
     private lateinit var listUser: MutableList<User>
+
+    interface GetUsersListListener {
+        fun getUsersList(): MutableList<User>
+    }
+
+    private lateinit var getUsersListListener: GetUsersListListener
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        getUsersListListener = context as GetUsersListListener
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,19 +68,26 @@ class LogInFragment : Fragment() {
     }
 
     private fun changeToSignUpFragment() {
+        //với transaction
         parentFragmentManager.apply {
             beginTransaction()
                 .replace(R.id.fragment_container, SignUpFragment())
                 .addToBackStack(null)
                 .commit()
         }
+
+        //Với nav graph
+        //findNavController().navigate(R.id.action_logInFragment_to_signUpFragment)
     }
 
     private fun login() {
-        loginModel.users.observe(viewLifecycleOwner, Observer<MutableList<User>> {
-            listUser = it
-            Log.i("LoginModel", "$it")
-        })
+//        loginModel.users.observe(viewLifecycleOwner, Observer<MutableList<User>> {
+//            listUser = it
+//            Log.i("LoginModel", "$it")
+//        })
+
+        listUser = getUsersListListener.getUsersList()
+
         val enteredEmail = binding.edtEnterEmail.text.toString()
         val enteredPassword = binding.edtEnterPassword.text.toString()
 

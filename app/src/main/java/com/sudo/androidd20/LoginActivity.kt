@@ -9,10 +9,16 @@ import androidx.fragment.app.commit
 import com.sudo.androidd20.data.User
 import com.sudo.androidd20.databinding.ActivityLoginBinding
 import com.sudo.androidd20.fragment.LogInFragment
+import com.sudo.androidd20.fragment.SignUpFragment
 import com.sudo.androidd20.model.LoginModel
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity(), LogInFragment.GetUsersListListener,
+    SignUpFragment.UpdateUsersListListener {
     private val loginModel: LoginModel by viewModels()
+    private lateinit var listUser: MutableList<User>
+
+    val getUsersList = { -> listUser }
+    val addUser = { user: User -> listUser.add(user) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +36,15 @@ class LoginActivity : AppCompatActivity() {
 
     //mục đích chính là load dữ liệu người dùng từ database nên em đặt tên thế này
     private fun loadUsersData() {
-        loginModel.add(
+//        loginModel.add(
+//            User(
+//                email = "admin",
+//                userName = "admin",
+//                password = "admin"
+//            )
+//        )
+
+        listUser = mutableListOf(
             User(
                 email = "admin",
                 userName = "admin",
@@ -39,5 +53,13 @@ class LoginActivity : AppCompatActivity() {
         )
 
         Log.i("LoginModel", "add S4ltF1sh!")
+    }
+
+    override fun getUsersList(): MutableList<User> {
+        return listUser
+    }
+
+    override fun addUser(user: User) {
+        listUser.add(user)
     }
 }

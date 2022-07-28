@@ -1,5 +1,6 @@
 package com.sudo.androidd20.fragment
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -17,6 +18,17 @@ import com.sudo.androidd20.model.LoginModel
 class SignUpFragment : Fragment() {
     private lateinit var binding: FragmentSignUpBinding
     private val loginModel: LoginModel by activityViewModels()
+
+    interface UpdateUsersListListener {
+        fun addUser(user: User)
+    }
+
+    private lateinit var updateUsersListListener: UpdateUsersListListener
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        updateUsersListListener = context as UpdateUsersListListener
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,8 +72,26 @@ class SignUpFragment : Fragment() {
             resetPasswordEditText()
         } else {
             //thực hiện việc thêm người dùng mới vào database (tạm hiểu là thế)
+//            if (enteredUserName.contains("@gmail.com"))
+//                loginModel.add(
+//                    User(
+//                        email = enteredUserName,
+//                        userName = "None",
+//                        password = enteredPassword
+//                    )
+//                )
+//            else {
+//                loginModel.add(
+//                    User(
+//                        email = "None",
+//                        userName = enteredUserName,
+//                        password = enteredPassword
+//                    )
+//                )
+//            }
+
             if (enteredUserName.contains("@gmail.com"))
-                loginModel.add(
+                updateUsersListListener.addUser(
                     User(
                         email = enteredUserName,
                         userName = "None",
@@ -69,7 +99,7 @@ class SignUpFragment : Fragment() {
                     )
                 )
             else {
-                loginModel.add(
+                updateUsersListListener.addUser(
                     User(
                         email = "None",
                         userName = enteredUserName,
