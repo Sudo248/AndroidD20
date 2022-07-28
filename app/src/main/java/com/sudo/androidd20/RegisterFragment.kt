@@ -39,6 +39,9 @@ class RegisterFragment : Fragment() {
         binding.register.setOnClickListener {
             signup(binding.username.toString(),binding.password.toString(),binding.confirmedPassword.toString())
         }
+        binding.tvSignIn.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(R.id.frame_container,LoginFragment()).addToBackStack(null).commit()
+        }
         return binding.root
     }
 

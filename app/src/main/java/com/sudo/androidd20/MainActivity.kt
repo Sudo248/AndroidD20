@@ -5,10 +5,8 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import com.sudo.androidd20.CallBack
 
 class MainActivity : AppCompatActivity() {
-    private var fragment: Fragment? = null
     private var fragmentManager: FragmentManager? = null
     private var fragmentTransaction: FragmentTransaction? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,5 +25,6 @@ class MainActivity : AppCompatActivity() {
         )
         fragmentTransaction?.commit()
     }
-    
+
+
 }
