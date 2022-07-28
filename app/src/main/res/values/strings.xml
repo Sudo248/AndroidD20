@@ -11,6 +11,7 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="tv_login">Login</string>
+    <string name="tv_register">Register</string>
     <string name="tv_btn_sign_up">Sign up</string>
     <string name="dont_have_account">Don\'t have account</string>
     <!-- TODO: Remove or change this placeholder text -->
