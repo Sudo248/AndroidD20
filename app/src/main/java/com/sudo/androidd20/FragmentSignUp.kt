@@ -27,8 +27,8 @@ class FragmentSignUp : Fragment() {
                 Toast.makeText(context, "Confirm password is empty", Toast.LENGTH_SHORT).show()
             } else if (viewBinding.etPassword.text.toString() == viewBinding.etConfirmPassword.text.toString()) {
                 Toast.makeText(context, "Signup success", Toast.LENGTH_SHORT).show()
-                Data.userName = viewBinding.etEmail.text.toString()
-                Data.password = viewBinding.etPassword.text.toString()
+                Data.userName?.add(viewBinding.etEmail.text.toString())
+                Data.password?.add(viewBinding.etPassword.text.toString())
                 fragmentManager?.popBackStack()
             } else {
                 Toast.makeText(

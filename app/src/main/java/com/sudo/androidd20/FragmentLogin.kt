@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.sudo.androidd20.databinding.LoginFragmentBinding
 
 class FragmentLogin : Fragment() {
-    private var callBackFragment: CallBackFragment? = null
+    private var callBackFragment: CallBack? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,14 +21,19 @@ class FragmentLogin : Fragment() {
                 Toast.makeText(context, "Please enter your email", Toast.LENGTH_SHORT).show()
             } else if (viewBinding.etPassword.text.toString() == "")
                 Toast.makeText(context, "Please enter your password", Toast.LENGTH_SHORT).show()
-            else if (viewBinding.etEmail.text.toString() != Data.userName || viewBinding.etPassword.text.toString() != Data.password) {
+            else if (Data.userName?.indexOf(viewBinding.etEmail.text.toString()) != -1
+                && Data.password?.indexOf(viewBinding.etPassword.text.toString()) == Data.userName?.indexOf(
+                    viewBinding.etEmail.text.toString()
+                )
+            ) {
+                Toast.makeText(context, "Login Successful", Toast.LENGTH_SHORT).show()
+                callBackFragment?.changeActivity(SecondActivity())
+            } else {
                 Toast.makeText(
                     context,
                     "Wrong email or password",
                     Toast.LENGTH_SHORT
                 ).show()
-            } else {
-                Toast.makeText(context, "Login Successful", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -41,7 +46,7 @@ class FragmentLogin : Fragment() {
     }
 
     @JvmName("setCallBackFragment1")
-    fun setCallBackFragment(callBackFragment: CallBackFragment) {
+    fun setCallBackFragment(callBackFragment: CallBack) {
         this.callBackFragment = callBackFragment
     }
 

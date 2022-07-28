@@ -1,13 +1,13 @@
 package com.sudo.androidd20
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 
-open class MainActivity : AppCompatActivity(), CallBackFragment {
+open class MainActivity : AppCompatActivity(), CallBack {
     private var fragment: Fragment? = null
     private var fragmentManager: FragmentManager? = null
     private var fragmentTransaction: FragmentTransaction? = null
@@ -16,7 +16,6 @@ open class MainActivity : AppCompatActivity(), CallBackFragment {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         addFragment()
-
     }
 
     private fun addFragment() {
@@ -41,6 +40,22 @@ open class MainActivity : AppCompatActivity(), CallBackFragment {
             fragment as FragmentSignUp
         )
         fragmentTransaction?.commit()
+    }
+
+    private fun replaceActivity(Activity: Class<*>) {
+        val intent = Intent(this, Activity)
+        startActivity(intent)
+    }
+
+    //    override fun onBackPressed() {
+//        if (fragment is FragmentSignUp) {
+//            replaceFragment(FragmentLogin())
+//        } else {
+//            super.onBackPressed()
+//        }
+//    }
+    override fun changeActivity(Activity: AppCompatActivity) {
+        replaceActivity(Activity::class.java)
     }
 
     override fun changeFragment(Fragment: Fragment) {
