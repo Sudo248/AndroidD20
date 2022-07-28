@@ -11,10 +11,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="top|center"
         android:layout_marginTop="50dp"
-        android:text="SIGNUP"
+        android:text="SIGNUP\nPassword 3+ character"
         android:textSize="30sp"
         android:textStyle="bold"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"
+        android:gravity="center" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -65,7 +66,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button_login"
+                android:id="@+id/button_sign_up"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sign up"
