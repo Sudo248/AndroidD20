@@ -2,13 +2,9 @@ package com.sudo.androidd20
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import com.sudo.androidd20.data.User
 import com.sudo.androidd20.databinding.ActivityMainBinding
-import com.sudo.androidd20.model.LoginModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

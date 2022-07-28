@@ -8,27 +8,26 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.commit
 import com.sudo.androidd20.LoginActivity
-import com.sudo.androidd20.R
+import com.sudo.androidd20.MainActivity
 import com.sudo.androidd20.data.User
 import com.sudo.androidd20.databinding.FragmentSignUpBinding
-import com.sudo.androidd20.model.LoginModel
+import com.sudo.androidd20.viewmodel.LoginModel
 
 class SignUpFragment : Fragment() {
     private lateinit var binding: FragmentSignUpBinding
-    private val loginModel: LoginModel by activityViewModels()
-
-    interface UpdateUsersListListener {
-        fun addUser(user: User)
-    }
-
-    private lateinit var updateUsersListListener: UpdateUsersListListener
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        updateUsersListListener = context as UpdateUsersListListener
-    }
+//    private val loginModel: LoginModel by activityViewModels()
+//
+//    interface UpdateUsersListListener {
+//        fun addUser(user: User)
+//    }
+//
+//    private lateinit var updateUsersListListener: UpdateUsersListListener
+//
+//    override fun onAttach(context: Context) {
+//        super.onAttach(context)
+//        updateUsersListListener = context as UpdateUsersListListener
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -90,8 +89,26 @@ class SignUpFragment : Fragment() {
 //                )
 //            }
 
+//            if (enteredUserName.contains("@gmail.com"))
+//                updateUsersListListener.addUser(
+//                    User(
+//                        email = enteredUserName,
+//                        userName = "None",
+//                        password = enteredPassword
+//                    )
+//                )
+//            else {
+//                updateUsersListListener.addUser(
+//                    User(
+//                        email = "None",
+//                        userName = enteredUserName,
+//                        password = enteredPassword
+//                    )
+//                )
+//            }
+
             if (enteredUserName.contains("@gmail.com"))
-                updateUsersListListener.addUser(
+                (activity as LoginActivity).updateUsersList(
                     User(
                         email = enteredUserName,
                         userName = "None",
@@ -99,7 +116,8 @@ class SignUpFragment : Fragment() {
                     )
                 )
             else {
-                updateUsersListListener.addUser(
+                (activity as LoginActivity).updateUsersList(
+
                     User(
                         email = "None",
                         userName = enteredUserName,

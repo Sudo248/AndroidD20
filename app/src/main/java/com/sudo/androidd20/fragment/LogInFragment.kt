@@ -1,41 +1,34 @@
 package com.sudo.androidd20.fragment
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.setFragmentResultListener
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import com.sudo.androidd20.LoginActivity
 import com.sudo.androidd20.MainActivity
 import com.sudo.androidd20.R
 import com.sudo.androidd20.data.User
 import com.sudo.androidd20.databinding.FragmentLoginBinding
-import com.sudo.androidd20.model.LoginModel
 
 class LogInFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
-    private val loginModel: LoginModel by activityViewModels()
+
+    //    private val loginModel: LoginModel by activityViewModels()
     private lateinit var listUser: MutableList<User>
 
-    interface GetUsersListListener {
-        fun getUsersList(): MutableList<User>
-    }
-
-    private lateinit var getUsersListListener: GetUsersListListener
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        getUsersListListener = context as GetUsersListListener
-    }
+//    interface GetUsersListListener {
+//        fun getUsersList(): MutableList<User>
+//    }
+//
+//    private lateinit var getUsersListListener: GetUsersListListener
+//
+//    override fun onAttach(context: Context) {
+//        super.onAttach(context)
+//        getUsersListListener = context as GetUsersListListener
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -86,7 +79,8 @@ class LogInFragment : Fragment() {
 //            Log.i("LoginModel", "$it")
 //        })
 
-        listUser = getUsersListListener.getUsersList()
+//        listUser = getUsersListListener.getUsersList()
+        listUser = (activity as LoginActivity).getUsersList()
 
         val enteredEmail = binding.edtEnterEmail.text.toString()
         val enteredPassword = binding.edtEnterPassword.text.toString()
