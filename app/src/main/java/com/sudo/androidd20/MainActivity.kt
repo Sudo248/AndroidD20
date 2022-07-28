@@ -12,14 +12,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.buttonLogout.setOnClickListener {
-            logOutClicked()
+        binding.apply {
+            buttonLogout.setOnClickListener {
+                logOutClicked()
+            }
+            tvGreeting.text = "Welcome, " +
+                    intent.getStringExtra(Constants.USERNAME)
+            tvPassword.text = "Last 3 digit of your password is: " +
+                    intent.getStringExtra(Constants.SHORTPASSWORD)
         }
-
-        binding.tvGreeting.text = "Welcome, " +
-                intent.getStringExtra(Constants.USERNAME)
-        binding.tvPassword.text = "Last 3 digit of your password is: " +
-                intent.getStringExtra(Constants.SHORTPASSWORD)
     }
 
     private fun logOutClicked() {
