@@ -6,19 +6,20 @@
     android:layout_height="match_parent"
     android:background="@drawable/login_background"
     tools:context=".SecondActivity">
-    <TextView
+
+    <EditText
         android:id="@+id/username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="126dp"
         android:layout_marginEnd="24dp"
-        android:selectAllOnFocus="true"
-        android:textSize="18dp"
+        android:hint="@string/invalid_username"
+        android:autofillHints="emailAddress"
+        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="username" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
