@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentResultListener
 import com.sudo.androidd20.databinding.FragmentLoginBinding
-import java.lang.Exception
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +25,6 @@ class LoginFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var binding: FragmentLoginBinding
-    private var user: User? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -46,7 +44,6 @@ class LoginFragment : Fragment() {
                 this@LoginFragment,
             FragmentResultListener{_,bundle->
                 val result = bundle.getSerializable("userName") as User
-                user = result
                 binding.username.setText(result.email)
             })
         }
@@ -59,17 +56,16 @@ class LoginFragment : Fragment() {
                 Toast.makeText(context,"Please complete all information", Toast.LENGTH_SHORT).show()
             }
             else{
-                try{
-                    val intent = Intent(context,SecondActivity::class.java)
-                    val bundle = Bundle()
-                    bundle.putSerializable("userData",user)
-                    intent.putExtras(bundle)
-                    startActivity(intent)
-                    activity?.finish()
-                }
-                catch (e:Exception){
-                    throw e
-                }
+
+                val intent = Intent(context,SecondActivity::class.java)
+                val bundle = Bundle()
+                bundle.putSerializable("userData",User(binding.username.text.toString(),binding.password.text.toString()))
+                intent.putExtras(bundle)
+                activity?.finish()
+                startActivity(intent)
+                Toast.makeText(context,"Logged in successfully", Toast.LENGTH_SHORT).show()
+
+
             }
         }
         return binding.root
