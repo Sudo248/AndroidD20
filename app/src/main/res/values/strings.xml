@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">AndroidD20</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_your_email">Enter Your Email</string>
+    <string name="password">Password</string>
+    <string name="tv_login">LOGIN</string>
+    <string name="btn_login">Login</string>
+    <string name="dont_have_account">Don\'t have account?</string>
+    <string name="tv_btn_sign_up"><u>Sign up</u></string>
+    <string name="tv_sign_up">SIGN UP</string>
+    <string name="tv_btn_log_in"><u>Log in</u></string>
+    <string name="already_have_an_account">Already, have an account?</string>
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="email_or_username">Email Or Username</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="btn_log_out">Log out</string>
 </resources>
