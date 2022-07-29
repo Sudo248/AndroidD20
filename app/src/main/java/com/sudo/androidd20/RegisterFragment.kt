@@ -63,6 +63,10 @@ class RegisterFragment : Fragment() {
                 setFragmentResult("result_to_fragment_login", bundle)
                 popBackStack()
             }
+//            val fragmentLogin = LoginFragment()
+//            val bundle = Bundle()
+//            fragmentLogin.arguments = bundle
+//            bundle.putSerializable("userName",User(username,password))
         }
     }
 

@@ -47,7 +47,9 @@ class LoginFragment : Fragment() {
                 binding.username.setText(result.email)
             })
         }
-
+//        arguments?.let {
+//            val result = it.getSerializable("userName") as User
+//        }
         binding.tvSignUp.setOnClickListener{
             changeFragment()
         }
