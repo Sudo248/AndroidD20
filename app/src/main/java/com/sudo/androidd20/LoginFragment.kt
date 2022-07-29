@@ -21,7 +21,7 @@ import com.sudo.androidd20.databinding.FragmentSignUpBinding.inflate
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
-    var accounts: ArrayList<User> = arrayListOf()
+    private var accounts: ArrayList<User> = arrayListOf()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -51,12 +51,12 @@ class LoginFragment : Fragment() {
                 "Password must not be empty",
                 Toast.LENGTH_LONG
             ).show()
-            val login_user = User(email, password)
-            if (accounts.contains(login_user)) {
+            val loginUser = User(email, password)
+            if (accounts.contains(loginUser)) {
                 val intent = Intent(context, MainActivity2::class.java)
                 //passing infor to the other activity
-                intent.putExtra("name", login_user.email.toString())
-                intent.putExtra("password", login_user.password.toString())
+                intent.putExtra("name", loginUser.email.toString())
+                intent.putExtra("password", loginUser.password.toString())
                 startActivity(intent)
             } else {
                 Toast.makeText(context, "Incorrect password or account", Toast.LENGTH_SHORT).show()
@@ -65,10 +65,10 @@ class LoginFragment : Fragment() {
         }
 
         binding.tvSignUp.setOnClickListener {
-            val FragmentSignUp = SignUpFragment()
+            val fragmentSignUp = SignUpFragment()
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
             transaction.apply {
-                replace(R.id.fragment_menu, FragmentSignUp)
+                replace(R.id.fragment_menu, fragmentSignUp)
                 commit()
             }
         }

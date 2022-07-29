@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 
 class MainActivity : AppCompatActivity() {
-    val loginInFragment = LoginFragment()
+    private val loginInFragment = LoginFragment()
     // val signUpFragment= SignUpFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {

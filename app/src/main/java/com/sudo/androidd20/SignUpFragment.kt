@@ -53,22 +53,22 @@ class SignUpFragment : Fragment() {
 
         }
         binding.tvLogin.setOnClickListener {
-            val FragmentLogin = LoginFragment()
+            val fragmentLogin = LoginFragment()
             //passing data
             val bundle = Bundle()
-            FragmentLogin.arguments = bundle
+            fragmentLogin.arguments = bundle
             bundle.putSerializable("acc", accounts)
             //transition
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
             transaction.apply {
-                replace(R.id.fragment_menu, FragmentLogin)
+                replace(R.id.fragment_menu, fragmentLogin)
                 commit()
             }
         }
         return binding.root
     }
 
-    fun isEmailValid(email: String): Boolean {
+    private fun isEmailValid(email: String): Boolean {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 }
