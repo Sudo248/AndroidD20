@@ -55,7 +55,8 @@ class RegisterFragment : Fragment() {
             Toast.makeText(context,"Password does not match",Toast.LENGTH_SHORT).show()
         }
         else{
-            (activity as MainActivity).updateUsersList(User(username,password))
+//            (activity as MainActivity).updateUsersList(User(username,password))
+            Toast.makeText(context,"Create account success",Toast.LENGTH_SHORT).show()
             parentFragmentManager.apply {
                 val bundle = Bundle()
                 bundle.putString("userName",username)

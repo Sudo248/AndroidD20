@@ -1,10 +1,10 @@
 package com.sudo.androidd20
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentResultListener
 import com.sudo.androidd20.databinding.FragmentLoginBinding
 
@@ -30,7 +30,6 @@ class LoginFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
-
     }
 
     override fun onCreateView(
@@ -38,13 +37,15 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentLoginBinding.inflate(inflater,container,false)
-        parentFragmentManager.setFragmentResultListener("result_to_fragment_login",
-        this,
-        FragmentResultListener{_,it->
-            val result = it.getString("userName")
-            binding.username.setText(result)
+        parentFragmentManager.apply {
+            setFragmentResultListener("result_to_fragment_login",
+                this@LoginFragment,
+            FragmentResultListener{_,bundle->
+                val result = bundle.getString("userName")
+                binding.username.setText(result)
+            })
+        }
 
-        })
         binding.tvSignUp.setOnClickListener{
             changeFragment()
         }
