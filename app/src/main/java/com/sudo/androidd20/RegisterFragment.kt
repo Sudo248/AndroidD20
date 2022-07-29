@@ -59,7 +59,7 @@ class RegisterFragment : Fragment() {
             Toast.makeText(context,"Create account success",Toast.LENGTH_SHORT).show()
             parentFragmentManager.apply {
                 val bundle = Bundle()
-                bundle.putString("userName",username)
+                bundle.putSerializable("userName",User(username,password))
                 setFragmentResult("result_to_fragment_login", bundle)
                 popBackStack()
             }

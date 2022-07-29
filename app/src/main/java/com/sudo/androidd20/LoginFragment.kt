@@ -42,8 +42,8 @@ class LoginFragment : Fragment() {
             setFragmentResultListener("result_to_fragment_login",
                 this@LoginFragment,
             FragmentResultListener{_,bundle->
-                val result = bundle.getString("userName")
-                binding.username.setText(result)
+                val result = bundle.getSerializable("userName") as User
+                binding.username.setText(result.email)
             })
         }
 
