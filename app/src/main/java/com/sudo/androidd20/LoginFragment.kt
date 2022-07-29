@@ -1,5 +1,6 @@
 package com.sudo.androidd20
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -49,7 +50,10 @@ class LoginFragment : Fragment() {
         binding.tvSignUp.setOnClickListener{
             changeFragment()
         }
-
+        binding.login.setOnClickListener {
+            val intent = Intent(context,SecondActivity::class.java)
+            startActivity(intent)
+        }
         return binding.root
     }
 
