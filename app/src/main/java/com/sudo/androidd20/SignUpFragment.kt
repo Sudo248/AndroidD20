@@ -14,7 +14,7 @@ class SignUpFragment : Fragment() {
 
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
-    val accounts: ArrayList<User> = arrayListOf()
+    private val accounts: ArrayList<User> = arrayListOf()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -25,7 +25,7 @@ class SignUpFragment : Fragment() {
         binding.btnSignup.setOnClickListener {
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
-            val confirm_password = binding.etConfirmPassword.text.toString()
+            val confirmPassword = binding.etConfirmPassword.text.toString()
             if (!isEmailValid(email)) Toast.makeText(
                 context,
                 "You did not enter email in the right way!",
@@ -36,7 +36,7 @@ class SignUpFragment : Fragment() {
                 "Email must not be empty",
                 Toast.LENGTH_SHORT
             ).show()
-            else if (confirm_password != password) Toast.makeText(
+            else if (confirmPassword != password) Toast.makeText(
                 context,
                 "Confirm password is not correct!",
                 Toast.LENGTH_LONG
@@ -48,7 +48,7 @@ class SignUpFragment : Fragment() {
             ).show()
             else {
                 accounts.add(User(email, password))
-                Toast.makeText(context, "${email} has just been created", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "$email has just been created", Toast.LENGTH_SHORT).show()
             }
 
         }
