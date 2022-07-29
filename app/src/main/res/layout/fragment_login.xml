@@ -34,7 +34,6 @@
         android:hint="@string/prompt_email"
         android:autofillHints="emailAddress"
         android:inputType="textEmailAddress"
-        android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -65,7 +64,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="64dp"
-        android:enabled="false"
+        android:enabled="true"
         android:background="@drawable/ic_login_background"
         android:text="@string/action_sign_in_short"
         app:layout_constraintBottom_toBottomOf="parent"

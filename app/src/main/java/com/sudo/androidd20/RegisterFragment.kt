@@ -1,9 +1,11 @@
 package com.sudo.androidd20
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.sudo.androidd20.databinding.FragmentRegisterBinding
 
@@ -37,7 +39,8 @@ class RegisterFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentRegisterBinding.inflate(inflater,container,false)
         binding.register.setOnClickListener {
-            signup(binding.username.toString(),binding.password.toString(),binding.confirmedPassword.toString())
+            println("${binding.username.toString()}+${binding.password.toString()}+${binding.confirmedPassword.toString()} find any something")
+            signup(binding.username.toString().trim(),binding.password.toString().trim(),binding.confirmedPassword.toString().trim())
         }
         binding.tvSignIn.setOnClickListener {
             parentFragmentManager.popBackStack()
@@ -46,14 +49,20 @@ class RegisterFragment : Fragment() {
     }
 
     private fun signup(username: String?, password: String?, confirmedPassword: String?) {
-        if (username == null || password == null || confirmedPassword == null) {
-            // TODO
+        if (username.isNullOrEmpty()  || password.isNullOrEmpty() || confirmedPassword.isNullOrEmpty() ) {
+            Toast.makeText(context,"Please complete all information",Toast.LENGTH_SHORT).show()
         }
-        else if(password != confirmedPassword){
-            // TODO
+        else if(password.compareTo(confirmedPassword)!=0){
+            Toast.makeText(context,"Password does not match",Toast.LENGTH_SHORT).show()
         }
         else{
-            //TODO
+            (activity as MainActivity).updateUsersList(User(username,password))
+            parentFragmentManager.apply {
+                val bundle = Bundle()
+                bundle.putString("userName",username)
+                setFragmentResult("result_to_fragment_login", bundle)
+                popBackStack()
+            }
         }
     }
 
