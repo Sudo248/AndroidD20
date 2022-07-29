@@ -37,6 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtTitle">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiEdtEmail"
             android:singleLine="true"
             android:nextFocusForward="@id/tilPassword"
             android:layout_width="match_parent"
