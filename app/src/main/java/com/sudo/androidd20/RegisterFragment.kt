@@ -1,7 +1,6 @@
 package com.sudo.androidd20
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,8 +38,8 @@ class RegisterFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentRegisterBinding.inflate(inflater,container,false)
         binding.register.setOnClickListener {
-            println("${binding.username.toString()}+${binding.password.toString()}+${binding.confirmedPassword.toString()} find any something")
-            signup(binding.username.toString().trim(),binding.password.toString().trim(),binding.confirmedPassword.toString().trim())
+
+            signup(binding.username.text.toString(),binding.password.text.toString(),binding.confirmedPassword.text.toString())
         }
         binding.tvSignIn.setOnClickListener {
             parentFragmentManager.popBackStack()
