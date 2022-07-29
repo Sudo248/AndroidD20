@@ -7,18 +7,18 @@
     tools:context=".FirstFragment">
 
     <TextView
-        android:id="@+id/tvfirstfragment"
-        android:layout_width="106dp"
-        android:layout_height="33dp"
+        android:id="@+id/tvlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="LOGIN"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/editText5"
+        app:layout_constraintBottom_toTopOf="@+id/tventeremail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/tventeremail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enter your email"
@@ -33,8 +33,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password"
-        app:layout_constraintStart_toStartOf="@+id/editText5"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintStart_toStartOf="@+id/tventeremail"
+        app:layout_constraintTop_toBottomOf="@+id/tventeremail" />
 
     <Button
         android:id="@+id/button"
