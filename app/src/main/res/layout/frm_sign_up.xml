@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".FirstFragment">
+
+        <TextView
+            android:id="@+id/tvsignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SIGN UP"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/edtemailorname"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.523" />
+
+        <EditText
+            android:id="@+id/edtemailorname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Email or user name"
+            app:layout_constraintBottom_toTopOf="@+id/edtpass"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.469"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/edtpass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Password"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/edtemailorname"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edtcfpass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Confirm Password"
+            app:layout_constraintStart_toStartOf="@+id/edtemailorname"
+            app:layout_constraintTop_toBottomOf="@+id/edtpass" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign up"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtcfpass" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvsignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SIGN UP"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/edtemailorname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.523" />
+
+    <EditText
+        android:id="@+id/edtemailorname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Email or user name"
+        app:layout_constraintBottom_toTopOf="@+id/edtpass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edtpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/edtemailorname"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtcfpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Confirm Password"
+        app:layout_constraintStart_toStartOf="@+id/edtemailorname"
+        app:layout_constraintTop_toBottomOf="@+id/edtpass" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtcfpass" />
+</androidx.constraintlayout.widget.ConstraintLayout>

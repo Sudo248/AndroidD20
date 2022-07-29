@@ -6,6 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class SecondFragment : Fragment(R.layout.fragment_second) {
+class login_frm : Fragment(R.layout.frm_login) {
 
 }

@@ -9,8 +9,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val firstFragment = FirstFragment()
-        val secondFragment = SecondFragment()
+        val firstFragment = login_frm()
+        val secondFragment = sign_up_frm()
 
         val sign_up_or_in = findViewById<Button>(R.id.sign_up_or_in)
         val have_account_or_not = findViewById<TextView>(R.id.have_account_or_not)
