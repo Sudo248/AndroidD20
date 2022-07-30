@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">AndroidD20</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_log_in">Log In</string>
+    <string name="enter_email">Enter your email</string>
+    <string name="password">Password</string>
+    <string name="sign_up"><u>Sign Up</u></string>
+    <string name="dont_have_account">Don\'t have account</string>
+    <string name="title_sign_up">Sign up</string>
+    <string name="enter_name">Enter your name</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="log_in"><u>Log in</u></string>
+    <string name="alreadly_have_account">Alreadly have account</string>
 </resources>
