@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgd_custom"
+    android:orientation="vertical"
+    tools:context=".RegisterFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="150dp"
+        android:text="SIGN UP"
+        android:textColor="@color/white"
+        android:textSize="45sp" />
+
+    <EditText
+        android:id="@+id/edtUsername"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="30dp"
+        android:hint="Your Email or Username"
+        android:importantForAutofill="no"
+        android:inputType="" />
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:hint="Password"
+        android:importantForAutofill="no"
+        android:inputType=""
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/edtConfirmPassword"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:hint="Confirm Password"
+        android:importantForAutofill="no"
+        android:inputType=""
+        tools:ignore="TextFields" />
+
+    <TextView
+        android:id="@+id/btnSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/button"
+        android:padding="10dp"
+        android:text="Sign Up"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="20dp"
+        android:text="Already, have an account?"
+        android:textColor="@color/black"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/txvLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:text="Click here to log in"
+        android:textColor="@color/black"
+        android:textStyle="italic|bold"
+        tools:ignore="RtlHardcoded" />
+
+</LinearLayout>
