@@ -12,7 +12,7 @@ import com.example.training3.databinding.FragmentRegisterBinding
 class RegisterFragment : Fragment() {
     private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
-    private var users: MutableList<User> = mutableListOf()
+    private lateinit var user: User
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,7 +23,7 @@ class RegisterFragment : Fragment() {
             val username = binding.edtUsername.text.toString()
             val password = binding.edtPassword.text.toString()
             val confirmPassword = binding.edtConfirmPassword.text.toString()
-            val user = User(username, password)
+            user = User(username, password)
             when {
                 username.isEmpty() -> Toast.makeText(
                     context,
@@ -45,13 +45,7 @@ class RegisterFragment : Fragment() {
                     "The confirmation password must be the same as the password",
                     Toast.LENGTH_LONG
                 ).show()
-                users.contains(user) -> Toast.makeText(
-                    context,
-                    "This account already exists",
-                    Toast.LENGTH_LONG
-                ).show()
                 else -> {
-                    users.add(user)
                     Toast.makeText(context, "You have successfully registered", Toast.LENGTH_LONG)
                         .show()
                 }
@@ -61,7 +55,7 @@ class RegisterFragment : Fragment() {
             val logInFragment = LoginFragment()
             val bundle = Bundle()
             logInFragment.arguments = bundle
-            bundle.putSerializable("users", ArrayList(users) )
+            bundle.putSerializable("user", user )
             requireActivity().supportFragmentManager.beginTransaction().apply {
                 replace(R.id.frame_main, logInFragment)
                 commit()

@@ -12,21 +12,21 @@ import com.example.training3.databinding.FragmentLoginBinding
 class LoginFragment : Fragment() {
     private var _binding : FragmentLoginBinding? = null
     private val binding get() = _binding!!
-    private var users: MutableList<User> = mutableListOf()
+    private lateinit var user: User
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         arguments?.let{
-            users = it.getSerializable("users") as MutableList<User>
+            user = it.getSerializable("user") as User
         }
         _binding = FragmentLoginBinding.inflate(inflater,container,false)
 
         binding.btnLogin.setOnClickListener{
             val username = binding.edtUsername.text.toString()
             val password = binding.edtPassword.text.toString()
-            val user = User(username, password)
+            val userLogin = User(username, password)
             when {
                 username.isEmpty() -> Toast.makeText(
                     context,
@@ -38,7 +38,7 @@ class LoginFragment : Fragment() {
                     "Fill in your Password",
                     Toast.LENGTH_LONG
                 ).show()
-                !users.contains(user) -> Toast.makeText(
+                userLogin != user -> Toast.makeText(
                     context,
                     "Wrong Username or Password",
                     Toast.LENGTH_LONG
