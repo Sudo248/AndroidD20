@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/log_in_background"
     tools:context=".MainActivity">
 
     <TextView
@@ -11,16 +12,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Don't have account?"
-        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/sign_up_or_in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/flfragment" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/sign_up_or_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign up"
+        android:textStyle="bold|italic"
+        android:background="#00000000"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -29,5 +34,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/have_account_or_not"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

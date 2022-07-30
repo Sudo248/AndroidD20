@@ -38,11 +38,12 @@
         app:layout_constraintStart_toStartOf="@+id/edtenteremail"
         app:layout_constraintTop_toBottomOf="@+id/edtenteremail" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
+        android:background="#00e9fa"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

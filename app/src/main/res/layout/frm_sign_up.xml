@@ -48,11 +48,12 @@
         app:layout_constraintStart_toStartOf="@+id/edtemailorname"
         app:layout_constraintTop_toBottomOf="@+id/edtpass" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign up"
+        android:background="#00e9fa"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
