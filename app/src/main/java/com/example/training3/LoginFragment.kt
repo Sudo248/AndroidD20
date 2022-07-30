@@ -10,20 +10,21 @@ import android.widget.Toast
 import com.example.training3.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
-    private var _binding : FragmentLoginBinding? = null
+    private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
-    private lateinit var user: User
+    private var user: User = User("admin", "admin")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        arguments?.let{
+        arguments?.let {
             user = it.getSerializable("user") as User
-        }
-        _binding = FragmentLoginBinding.inflate(inflater,container,false)
 
-        binding.btnLogin.setOnClickListener{
+        }
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        if (user.email != "admin") binding.edtUsername.setText(user.email)
+        binding.btnLogin.setOnClickListener {
             val username = binding.edtUsername.text.toString()
             val password = binding.edtPassword.text.toString()
             val userLogin = User(username, password)
@@ -44,17 +45,17 @@ class LoginFragment : Fragment() {
                     Toast.LENGTH_LONG
                 ).show()
                 else -> {
-                    val intent = Intent(context,WriteActivity::class.java)
+                    val intent = Intent(context, WriteActivity::class.java)
                     startActivity(intent)
                 }
             }
 
         }
 
-        binding.txvSignUp.setOnClickListener{
+        binding.txvSignUp.setOnClickListener {
             val registerFragment = RegisterFragment()
             requireActivity().supportFragmentManager.beginTransaction().apply {
-                replace(R.id.frame_main,registerFragment)
+                replace(R.id.frame_main, registerFragment)
                 commit()
             }
         }

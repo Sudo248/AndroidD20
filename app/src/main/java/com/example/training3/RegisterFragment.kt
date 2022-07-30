@@ -12,7 +12,7 @@ import com.example.training3.databinding.FragmentRegisterBinding
 class RegisterFragment : Fragment() {
     private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
-    private lateinit var user: User
+    private var user: User = User("admin","admin")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,6 +46,14 @@ class RegisterFragment : Fragment() {
                     Toast.LENGTH_LONG
                 ).show()
                 else -> {
+                    val logInFragment = LoginFragment()
+                    val bundle = Bundle()
+                    logInFragment.arguments = bundle
+                    bundle.putSerializable("user", user )
+                    requireActivity().supportFragmentManager.beginTransaction().apply {
+                        replace(R.id.frame_main, logInFragment)
+                        commit()
+                    }
                     Toast.makeText(context, "You have successfully registered", Toast.LENGTH_LONG)
                         .show()
                 }

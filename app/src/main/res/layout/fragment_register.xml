@@ -33,7 +33,7 @@
         android:layout_marginStart="60dp"
         android:hint="Password"
         android:importantForAutofill="no"
-        android:inputType=""
+        android:inputType="textPassword"
         tools:ignore="TextFields" />
 
     <EditText
@@ -43,7 +43,7 @@
         android:layout_marginStart="60dp"
         android:hint="Confirm Password"
         android:importantForAutofill="no"
-        android:inputType=""
+        android:inputType="textPassword"
         tools:ignore="TextFields" />
 
     <TextView
