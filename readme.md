@@ -1,15 +1,15 @@
 
 
-![image](https://user-images.githubusercontent.com/84316258/181816261-57aec8a8-cc72-4f8c-a28d-24ca67784a59.png)
+![image](https://user-images.githubusercontent.com/84316258/181867334-d77fc55f-fb18-4f67-8c56-695216a98648.png)
 
 Cửa sổ chính có các button login và signup, nếu ấn vào signup sẽ ra của số để signup.
 
-![image](https://user-images.githubusercontent.com/84316258/181816334-4875a4cf-f7ec-446a-b10d-31951e222705.png)
+![image](https://user-images.githubusercontent.com/84316258/181867363-8380e5d1-890e-4f78-854e-429e55335399.png)
 
 Còn nếu ấn vào login sẽ ra giao diện bên trong.
 
-![image](https://user-images.githubusercontent.com/84316258/181816366-9217f496-9034-4b41-8c13-b83b639054d0.png)
+![image](https://user-images.githubusercontent.com/84316258/181867375-1f88a64d-369f-43f6-bacb-4de10358b719.png)
 
 Logout ra sẽ về màn hình login.
 
-![image](https://user-images.githubusercontent.com/84316258/181816391-dcf5b604-21b8-46ec-9c03-fbf2b8580e93.png)
+![image](https://user-images.githubusercontent.com/84316258/181867380-0d0a5b15-36ec-48df-a021-247dbcc97e88.png)
