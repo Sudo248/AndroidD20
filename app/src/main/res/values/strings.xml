@@ -13,8 +13,6 @@
     <string name="already_have_an_account">Already, have an account?</string>
     <string name="log_in"><i><u>Log in</u></i></string>
     <string name="log_out">Log out</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="none">none</string>
     <string name="none1">none</string>
 </resources>
