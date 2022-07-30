@@ -4,9 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Documents/Project/Android/AndroidD20/app/src/main/res/drawable/background.xml" value="0.2525" />
+        <entry key="..\:/Documents/Project/Android/AndroidD20/app/src/main/res/layout/activity_info.xml" value="0.353713768115942" />
+        <entry key="..\:/Documents/Project/Android/AndroidD20/app/src/main/res/layout/activity_login.xml" value="0.18541666666666667" />
         <entry key="..\:/Documents/Project/Android/AndroidD20/app/src/main/res/layout/activity_main.xml" value="0.17426545086119555" />
         <entry key="..\:/Documents/Project/Android/AndroidD20/app/src/main/res/layout/fragment_login.xml" value="0.1" />
         <entry key="..\:/Documents/Project/Android/AndroidD20/app/src/main/res/layout/fragment_sign_uo.xml" value="0.25" />
+        <entry key="..\:/Documents/Project/Android/AndroidD20/app/src/main/res/layout/fragment_sign_up.xml" value="0.18541666666666667" />
       </map>
     </option>
   </component>
