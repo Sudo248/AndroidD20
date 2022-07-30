@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.sudo.androidd20.databinding.LoginFragmentBinding
 import com.sudo.androidd20.databinding.SignupFragmentBinding
 
 class FragmentSignUp : Fragment() {
@@ -27,9 +26,15 @@ class FragmentSignUp : Fragment() {
                 Toast.makeText(context, "Confirm password is empty", Toast.LENGTH_SHORT).show()
             } else if (viewBinding.etPassword.text.toString() == viewBinding.etConfirmPassword.text.toString()) {
                 Toast.makeText(context, "Signup success", Toast.LENGTH_SHORT).show()
-                Data.userName?.add(viewBinding.etEmail.text.toString())
-                Data.password?.add(viewBinding.etPassword.text.toString())
-                fragmentManager?.popBackStack()
+
+                val result = Bundle()
+                result.putSerializable("user",User(viewBinding.etEmail.text.toString(),viewBinding.etPassword.text.toString()))
+                parentFragmentManager.setFragmentResult("request_login", result)
+                parentFragmentManager.popBackStack()
+                //callBackFragment?.onChangeFragment(FragmentLogin())
+
+                Toast.makeText(context, "Sign In", Toast.LENGTH_SHORT).show()
+                // fragmentManager?.popBackStack()
             } else {
                 Toast.makeText(
                     context,
@@ -39,9 +44,10 @@ class FragmentSignUp : Fragment() {
             }
         }
 
-        viewBinding.btnSignIn.setOnClickListener {
+        viewBinding.tvSignIn.setOnClickListener {
+            parentFragmentManager.popBackStack()
             Toast.makeText(context, "Sign In", Toast.LENGTH_SHORT).show()
-            fragmentManager?.popBackStack()
+            // fragmentManager?.popBackStack()
         }
         return viewBinding.root
     }
