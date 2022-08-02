@@ -10,10 +10,8 @@ class WriteActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWriteBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_write)
         binding = ActivityWriteBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(binding.root)
         binding.btnLogOut.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
