@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:paddingHorizontal="16dp">
+
+    <TextView
+        android:id="@+id/tvContentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:text="@string/location_permission_is_accepted"
+        tools:ignore="RelativeOverlap" />
+
+    <ImageButton
+        android:id="@+id/imbtnHideNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        tools:ignore="ContentDescription" />
+
+</RelativeLayout>

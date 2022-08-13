@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AndroidD20</string>
+    <string name="action_settings">Settings</string>
+    <string name="get_location">GET LOCATION</string>
+    <string name="nothing_here">nothing here</string>
+    <string name="location_permission_is_accepted">Location permission is accepted</string>
+    <string name="default_battery_level">100%</string>
+    <!-- Strings used for fragments for navigation -->
 </resources>
