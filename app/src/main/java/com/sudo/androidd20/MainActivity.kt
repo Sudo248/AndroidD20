@@ -31,9 +31,8 @@ class MainActivity : AppCompatActivity() {
 
     private val mBatteryReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(p0: Context?, p1: Intent?) {
-            val level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1)
-            val scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1)
-            val batteryShow = "Battery Status: ${level * 100 / scale.toFloat()} %"
+            val level = p1?.getIntExtra(BatteryManager.EXTRA_LEVEL, -1)
+            val batteryShow = "Battery Status: $level %"
             binding.txtBatteryPercentage.text = batteryShow
         }
 
@@ -56,15 +55,14 @@ class MainActivity : AppCompatActivity() {
             ActivityCompat.requestPermissions(
                 this,
                 arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
-                101
+                1
             )
             return
         }
         task.addOnSuccessListener {
-            val locationStr = "Latitude: ${it.latitude} Longitude:${it.longitude}"
-            if (it != null)
-                binding.txtLocation.text = locationStr
-
+                val locationStr = "Latitude: ${it.latitude} Longitude:${it.longitude}"
+                if (it != null)
+                    binding.txtLocation.text = locationStr
         }
 
     }
