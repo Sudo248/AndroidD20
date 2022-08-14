@@ -3,7 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.sudo.androidd20">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- Luôn thêm quyền này từ android 11 trở lên khi xin quyền lấy vị trí-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Khi dùng ForegroundService cần thêm quyền này-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
     <application
+        android:name=".MyApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -22,6 +31,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".services.LocationNotificationService" />
+
+        <receiver
+            android:name=".broadcastReceivers.BatteryBroadcastReceiver"
+            android:exported="false"> <!--Phải thành false để thằng lấy thông tin vị trí từ gps mới sử dụng được-->
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_CHANGED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
