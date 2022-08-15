@@ -27,8 +27,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun requestLocationPermission() {
-
-        val task = fusedLocationProviderClient.lastLocation
         if (ActivityCompat.checkSelfPermission(
                 this,
                 android.Manifest.permission.ACCESS_FINE_LOCATION
@@ -49,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonBasic.setOnClickListener {
-            task.addOnSuccessListener {
+            fusedLocationProviderClient.lastLocation.addOnSuccessListener {
                 val locationStr = "Latitude: ${it.latitude} Longitude:${it.longitude}"
                 if (it != null) {
                     Toast.makeText(this, locationStr, Toast.LENGTH_LONG).show()
