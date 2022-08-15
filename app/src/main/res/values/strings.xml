@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">AndroidD20</string>
-    <string name="batteryString">Battery:</string>
+    <string name="localString">Location:</string>
 </resources>
