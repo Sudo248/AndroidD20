@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidD20</string>
+    <string name="battery_level">Phần trăm pin</string>
+    <string name="location_granted">Ví trị</string>
 </resources>
