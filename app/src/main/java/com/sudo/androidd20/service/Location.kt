@@ -6,13 +6,14 @@ import android.os.IBinder
 import android.widget.Toast
 
 class Location : Service() {
+
     override fun onBind(intent: Intent?): IBinder? {
-        TODO("Not yet implemented")
+        return null
     }
 
-
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        Toast.makeText(this, "Current Location: ",Toast.LENGTH_SHORT).show()
+        val location = intent?.getStringExtra("location")
+        Toast.makeText(this, location,Toast.LENGTH_SHORT).show()
         return super.onStartCommand(intent, flags, startId)
     }
 
