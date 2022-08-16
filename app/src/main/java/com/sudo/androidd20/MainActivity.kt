@@ -35,10 +35,11 @@ class MainActivity : AppCompatActivity() {
         IntentFilter(Intent.ACTION_BATTERY_CHANGED).also {
             registerReceiver(this.mBatteryReceiver,it)
         }
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         binding.btRequestLocation.setOnClickListener {
             getLocation()
         }
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
+
         setContentView(binding.root)
     }
 
