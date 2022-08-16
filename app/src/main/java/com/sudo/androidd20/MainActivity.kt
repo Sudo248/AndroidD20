@@ -30,10 +30,10 @@ class MainActivity : AppCompatActivity() {
             /*
             đăng ký tham số receiver it được truyền vào hàm registerReceiver () là IntentFilter mà chúng ta vừa tạo
              */
-            registerReceiver(receiver,it)
+            registerReceiver(receiver, it)
         }
         IntentFilter(Intent.ACTION_BATTERY_CHANGED).also {
-            registerReceiver(this.mBatteryReceiver,it)
+            registerReceiver(this.mBatteryReceiver, it)
         }
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         binding.btRequestLocation.setOnClickListener {
