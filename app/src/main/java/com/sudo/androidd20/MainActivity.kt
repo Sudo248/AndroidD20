@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
         task.addOnSuccessListener {
-            val locationStr = "Latitude: ${it.latitude} Longitude:${it.longitude}"
+            val locationStr = "Vĩ độ: ${it.latitude} Kinh độ:${it.longitude}"
             if (it != null)
                 binding.tvLocationGranted.text = locationStr
         }
