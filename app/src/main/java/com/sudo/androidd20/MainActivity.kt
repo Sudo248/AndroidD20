@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
+import android.os.BatteryManager
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -17,54 +18,44 @@ import com.sudo.androidd20.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
-        requestLocationPermission()
-        registerReceiver(this.batteryReceiver, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
+        binding.btLocation.setOnClickListener() {
+            requestLocation()
+        }
+        registerReceiver(this.mBatteryReceiver, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
     }
 
-    private fun requestLocationPermission() {
+    private val mBatteryReceiver: BroadcastReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            val power = intent?.getIntExtra(BatteryManager.EXTRA_LEVEL, -1)
+            binding.tvBattery.text = power.toString() + "%"
+        }
 
+    }
+
+    private fun requestLocation() {
         val task = fusedLocationProviderClient.lastLocation
         if (ActivityCompat.checkSelfPermission(
                 this,
                 android.Manifest.permission.ACCESS_FINE_LOCATION
-            ) !=
-            PackageManager.PERMISSION_GRANTED &&
-            ActivityCompat.checkSelfPermission(
-                this,
-                android.Manifest.permission.ACCESS_COARSE_LOCATION
-            ) !=
-            PackageManager.PERMISSION_GRANTED
+            ) != PackageManager.PERMISSION_GRANTED
         ) {
             ActivityCompat.requestPermissions(
                 this,
                 arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
-                101
+                1
             )
             return
         }
-
-        binding.buttonBasic.setOnClickListener {
-            task.addOnSuccessListener {
-                val locationStr = "Latitude: ${it.latitude} Longitude:${it.longitude}"
-                if (it != null) {
-                    Toast.makeText(this, locationStr, Toast.LENGTH_LONG).show()
-                    binding.tvLocation.text = locationStr
-                } else
-                    Toast.makeText(this, "No location found", Toast.LENGTH_LONG).show()
-            }
+        task.addOnSuccessListener {
+            val location = "None Gps Location"
+            binding.tvLocation.text = location
         }
     }
 
-    private val batteryReceiver: BroadcastReceiver = object : BroadcastReceiver() {
-        override fun onReceive(context: Context, intent: Intent) {
-            val level = intent.getIntExtra("level", 0)
-            val bat = "$level%"
-            binding.tvBattery.text = bat
-        }
-    }
 }
