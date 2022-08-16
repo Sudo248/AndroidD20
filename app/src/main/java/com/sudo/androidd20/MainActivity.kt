@@ -10,6 +10,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.sudo.androidd20.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         binding.btRequestLocation.setOnClickListener {
             getLocation()
         }
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         setContentView(binding.root)
     }
 
