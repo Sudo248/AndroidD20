@@ -7,10 +7,10 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button_basic"
+        android:id="@+id/btLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="btn"
+        android:text="Request permission"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         app:layout_constraintBottom_toBottomOf="@id/tvBattery"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_basic"
+        app:layout_constraintTop_toBottomOf="@+id/btLocation"
         android:textSize="30sp"/>
 
     <TextView
