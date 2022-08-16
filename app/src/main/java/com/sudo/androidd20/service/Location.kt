@@ -13,7 +13,7 @@ class Location : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val location = intent?.getStringExtra("location")
-        Toast.makeText(this, location,Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, location, Toast.LENGTH_SHORT).show()
         return super.onStartCommand(intent, flags, startId)
     }
 
